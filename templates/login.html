@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<form method="post" action="{% url 'login' %}">
+    {% csrf_token %}
+<table border="2" align="center">
+    <tr>
+        <th>
+            Log In
+        </th>
+    </tr>
+    <tr>
+        <th>
+            Email
+            <input type="email" name="email">
+        </th>
+    </tr>
+    <tr>
+        <th>
+            Password
+            <input type="password" name="password">
+        </th>
+    </tr>
+    <tr>
+        <th>
+            <button type="submit">Log In</button>
+        </th>
+    </tr>
+    <tr>
+        <th>
+            {% if message %}
+                {{ message }}
+            {% endif %}
+        </th>
+    </tr>
+    <tr>
+        <th>
+            {% if delete %}
+                {{ delete }}
+            {% endif %}
+        </th>
+    </tr>
+    <tr>
+        <th>
+            {% if update_sucess %}
+                {{ update_sucess }}
+            {% endif %}
+        </th>
+    </tr>
+</table>
+</form>
+<a href="{% url 'signup' %}">
+    <h3>
+        New User
+    </h3>
+</a>
+</body>
+</html>

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>SignUp Page</title>
+</head>
+<body>
+<table align="center" border="2">
+    <form method="post" action="{% url 'signup' %}">
+        {% csrf_token %}
+    <tr>
+        <th colspan="2">
+            Sign Up
+        </th>
+    </tr>
+    <tr>
+        <td>
+            {{ form }}
+        </td>
+    </tr>
+    <tr>
+        <td colspan="2" style="text-align: center">
+            <button type="submit">Sign Up</button>
+        </td>
+    </tr>
+    </form>
+    <tr>
+        <td colspan="2" style="text-align: center">
+            {{ message }}
+        </td>
+    </tr>
+</table>
+</body>
+</html>

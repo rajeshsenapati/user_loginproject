@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+{% if request.session.email %}
+    <table align="center" border="2">
+    <form action="{% url 'delete' data.email%}" method="post">
+        {% csrf_token %}
+    <tr>
+        <th colspan="2">
+            <h3>User Detail</h3> &nbsp;&nbsp; <a href="{% url 'login' %}">Log Out</a>
+        </th>
+    </tr>
+    <tr>
+        <th>
+            Name
+        </th>
+        <th>
+            {{ data.username }}
+        </th>
+    </tr>
+    <tr>
+        <th>
+            Email
+        </th>
+        <th>
+            {{ data.email }}
+        </th>
+    </tr>
+    <tr>
+        <th>
+            Address
+        </th>
+        <th>
+            {{ data.address }}
+        </th>
+    </tr>
+    <tr>
+        <th align="right">
+            <button type="submit">Delete</button>
+        </th>
+    </form>
+        <th align="right">
+            <a href="{% url 'update' data.email %}">
+                <input type="button" value="Update">
+            </a>
+        </th>
+    </tr>
+</table>
+{% endif %}
+</body>
+</html>

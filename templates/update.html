@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Update Page</title>
+</head>
+<body>
+<table align="center" border="2">
+    <form method="post" action="{% url 'update' data.email%}">
+        {% csrf_token %}
+    <tr>
+        <th>Name</th>
+        <th><input type="text" name="name" value="{{ data.username }}"></th>
+    </tr>
+    <tr>
+        <th>Email</th>
+        <th>
+            <input type="text" name="email" value="{{ data.email }}">
+        </th>
+    </tr>
+    <tr>
+        <th>Address</th>
+        <th>
+            <input type="text" name="address" value="{{ data.address }}">
+        </th>
+    </tr>
+    <tr>
+        <th colspan="2">
+            <button type="submit">Save</button>
+        </th>
+    </tr>
+    </form>
+</table>
+</body>
+</html>
